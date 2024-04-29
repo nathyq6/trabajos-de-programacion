@@ -23,6 +23,6 @@ printf("no es ninguna figura ni tampoco as");
 else{;
 printf("este numero no esta en la baraja española\n");
 }
-
+//prueba de comentario
 return 0;
 }
