@@ -1,28 +1,32 @@
-#include<stdio.h>
-int main(){
+#include <stdio.h>
 
-int carta;
-printf("dime el cumero de la carta");
-scanf("%d",&carta);
+int main() {
+  int carta;
 
-if(carta==1){;
-printf("es un as\n");
-}
-else if(carta==10){;
-printf("es un sota\n");
-}
- else if(carta==11){;
-printf("es un caballo\n");
-}
-else if(carta==12){;
-printf("es un rey\n");
-}
-else if(carta>=2 &&carta<=9){;
-printf("no es ninguna figura ni tampoco as");
-}
-else{;
-printf("este numero no esta en la baraja española\n");
-}
-//prueba de comentario
-return 0;
+  printf("Dime el número de la carta: ");
+  scanf("%d", &carta);
+
+  switch (carta) {
+    case 1:
+      printf("Es un as\n");
+      break;
+    case 10:
+      printf("Es un sota\n");
+      break;
+    case 11:
+      printf("Es un caballo\n");
+      break;
+    case 12:
+      printf("Es un rey\n");
+      break;
+    default:
+      if (carta >= 2 && carta <= 9) {
+        printf("No es ninguna figura ni tampoco as\n");
+      } else {
+        printf("Este número no está en la baraja española\n");
+      }
+  }
+
+
+  return 0;
 }
