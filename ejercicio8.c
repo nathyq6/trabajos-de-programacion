@@ -2,9 +2,9 @@
 
 int main(){
 
-int num;
+int i=100;
 
-for(int i=0;i<=100;i+=2){;
+for(i>=100;i>=1;i--){;
 printf("%d\n",i);
 
 }
