@@ -1,14 +1,13 @@
 #include<stdio.h>
 
 int main(){
+int contador=1;
 
-int i=100;
+while(contador<=100){;
 
-for(i>=100;i>=1;i--){;
-printf("%d\n",i);
-
+printf("%d",contador);
+contador ++;
 }
-
-
 return 0;
 }
+
