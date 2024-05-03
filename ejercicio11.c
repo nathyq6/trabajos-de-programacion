@@ -12,7 +12,7 @@ int main() {
     printf("Ingrese su contraseña: ");
     scanf("%c", contrasena);
 
-    if(usuario="rood"){;
+    if(usuario="root"=0 && contrasena="1234"=0){;
     printf("bienvenido al sistema\n");
     break;
   }
