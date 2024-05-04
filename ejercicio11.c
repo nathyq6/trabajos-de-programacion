@@ -1,29 +1,29 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-  char usuario;
-  char contrasena;
-  int oportunidades;
+  char usuario[20];
+  char contrasena[20];
+  int intentos = 0;
 
-  while(oportunidades<3){
-    printf("Ingrese su nombre de usuario: ");
-    scanf("%c", usuario);
+  do {
+    printf("dime tu usuario ");
+    scanf("%s", usuario);
 
-    printf("Ingrese su contraseña: ");
-    scanf("%c", contrasena);
+    printf("dime tu contraseña ");
+    scanf("%s", contrasena);
 
-    if(usuario="root"=0 && contrasena="1234"=0){;
-    printf("bienvenido al sistema\n");
-    break;
+    if (strcmp(usuario, "root") == 0 && strcmp(contrasena, "1234") == 0) {
+      printf("\nBienvenido al sistema\n");
+      break;
+    } else {
+      intentos++;
+      printf("\nDatos incorrectos intentos restantes %d\n", 3 - intentos);
+    }
+  } while (intentos < 3);
+
+  if (intentos == 3) {
+    printf("\nLo sentimos ha superado el número máximo de intentos permitidos\n");
   }
-  else{
-  printf("usuario y contraseña incorrecta\n");
-  oportunidades++;
-  }
+  return 0;
 }
-
-if(oportunidades=3){
-printf("has superado el maximo de intentos\n");
-}
-return 0;
-  }
