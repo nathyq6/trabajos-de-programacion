@@ -1,25 +1,32 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
+  int numero, menor, mayor;
+  int i;
+  int suma=0;
+  menor=0;
+  mayor=0;
 
-int numero,mayor,menor,suma;
-menor=mayor=suma=0;
-
-for(int i=1;i<=10;i++){;
-printf("dime el numeros%d",i);
+printf("dime 10 numeros");
 scanf("%d",&numero);
-}
+menor=numero;
+mayor=numero;
+suma+=numero;
+
+for(int i=1;i<10;i++){
+scanf("%d",&numero);
+suma+=numero;
 
 if(numero<menor){;
 menor=numero;
 }
-else if (numero>mayor){;
+if(numero>mayor){
 mayor=numero;
 }
-suma+=numero;
+}
+printf("el numero mayor es%d\n",mayor);
+printf("el numero menor es%d\n",menor);
+printf("la suma de los numeros es%d\n",suma);
 
-printf("\nel numero mayor es%d",mayor);
-printf("\nel numero menor es%d",menor);
-printf("\nla suma de los numeros es%d",suma);
 return 0;
 }
