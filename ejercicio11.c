@@ -2,18 +2,18 @@
 #include <string.h>
 
 int main() {
-  char usuario[20];
-  char contrasena[20];
+  char nombre[20];
+  char grupoLista[20];
   int intentos = 0;
 
   do {
-    printf("dime tu usuario ");
-    scanf("%s", usuario);
+    printf("dime tu nombre ");
+    scanf("%s",&nombre);
 
-    printf("dime tu contraseña ");
-    scanf("%s", contrasena);
+    printf("dime tu grupo grado y numero de lista ");
+    scanf("%s",&grupoLista);
 
-    if (strcmp(usuario, "root") == 0 && strcmp(contrasena, "1234") == 0) {
+    if (strcmp(nombre, "nathaly") == 0 && strcmp(grupoLista, "2b6") == 0) {
       printf("\nBienvenido al sistema\n");
       break;
     } else {
