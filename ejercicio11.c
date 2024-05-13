@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
+float calcularImporteArticulo(float unidad, float cantidad) {
+  if (unidad <= 0 || cantidad <= 0) {
+    printf("el precio y la cantidad deben ser números positivos\n");
+    return 0;
+  } else {
+   unidad*cantidad;
+  }
+}
+
 int main() {
   char nombre[50];
   char gradoGrupo[10];
@@ -31,6 +40,7 @@ int main() {
   }
 
  float unidad, cantidad, importeTotal = 0;
+ float calcularImporteDelArticulo;
 
   while (1) {
     printf("Introduzca el precio unitario del artículo introduzca 0 para terminar ");
@@ -49,7 +59,7 @@ int main() {
       continue;
     }
 
-    importeTotal += unidad * cantidad;
+    importeTotal +=calcularImporteDelArticulo,cantidad;
 
     printf("Importe parcial: %.2f\n", importeTotal);
 
