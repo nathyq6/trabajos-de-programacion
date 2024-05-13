@@ -2,61 +2,63 @@
 #include <string.h>
 
 int main() {
-  char nombre[20];
-  char grupoLista[20];
+  char nombre[50];
+  char gradoGrupo[10];
   int intentos = 0;
 
-  do {
-    printf("dime tu nombre ");
-    scanf("%s",&nombre);
+  const char *nombreCorrecto = "nathaly"; 
+  const char *gradoGrupoCorrecto = "2b6";
 
-    printf("dime tu grupo grado y numero de lista ");
-    scanf("%s",&grupoLista);
+  while (intentos < 3) {
+    intentos++;
 
-    if (strcmp(nombre, "nathaly") == 0 && strcmp(grupoLista, "2b6") == 0) {
-      printf("\nBienvenido al sistema\n");
+    printf("Introduzca su nombre  ");
+    scanf("%s", nombre);
+
+    printf("Introduzca su grado grupo y numero de lista ");
+    scanf("%s", gradoGrupo);
+
+    if (strcmp(nombre, nombreCorrecto) == 0 && strcmp(gradoGrupo, gradoGrupoCorrecto) == 0) {
+      printf("Bienvenido al sistema\n");
       break;
     } else {
-      intentos++;
-      printf("\nDatos incorrectos intentos restantes %d\n", 3 - intentos);
+      printf("Datos incorrectos Intentos restantes %d\n", 3 - intentos);
     }
-  } while (intentos < 3);
-
-  if (intentos == 3) {
-    printf("\nLo sentimos ha superado el número máximo de intentos permitidos\n");
   }
 
-  float Unidad, cantidad, importeTotal = 0;
+  if (intentos == 3) {
+    printf("Se ha superado el número máximo de intentos permitidos\n");
+  }
 
-  do {
-    printf("Introduzca el precio unitario del artículo si quiere terminar ingrese 0 ");
-    scanf("%f", &Unidad);
+ float unidad, cantidad, importeTotal = 0;
 
-    if (Unidad <= 0) {
+  while (1) {
+    printf("Introduzca el precio unitario del artículo introduzca 0 para terminar ");
+    scanf("%f", &unidad);
+
+    if (unidad <= 0) {
       printf("el precio unitario debe ser un número positivo\n");
       continue;
     }
 
-    printf("Introduzca la cantidad vendida ");
+    printf("Introduzca la cantidad que vendiste ");
     scanf("%f", &cantidad);
 
     if (cantidad <= 0) {
-      printf("Error la cantidad vendida debe ser un número positivo\n");
+      printf("la cantidad vendida debe ser un número positivo\n");
       continue;
     }
 
-    importeTotal +=Unidad * cantidad;
+    importeTotal += unidad * cantidad;
 
-    printf("Importe parcial %.2f\n", importeTotal);
-  } while (Unidad != 0);
+    printf("Importe parcial: %.2f\n", importeTotal);
 
-  printf("Importe total de la factura %.2f\n", importeTotal);
-  
+    if (unidad == 0) {
+      break;
+    }
+  }
 
+  printf("Importe total de la factura: %.2f\n", importeTotal);
 
   return 0;
-
-
-
 }
-
