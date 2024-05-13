@@ -25,5 +25,38 @@ int main() {
   if (intentos == 3) {
     printf("\nLo sentimos ha superado el número máximo de intentos permitidos\n");
   }
+
+  float Unidad, cantidad, importeTotal = 0;
+
+  do {
+    printf("Introduzca el precio unitario del artículo si quiere terminar ingrese 0 ");
+    scanf("%f", &Unidad);
+
+    if (Unidad <= 0) {
+      printf("el precio unitario debe ser un número positivo\n");
+      continue;
+    }
+
+    printf("Introduzca la cantidad vendida ");
+    scanf("%f", &cantidad);
+
+    if (cantidad <= 0) {
+      printf("Error la cantidad vendida debe ser un número positivo\n");
+      continue;
+    }
+
+    importeTotal +=Unidad * cantidad;
+
+    printf("Importe parcial %.2f\n", importeTotal);
+  } while (Unidad != 0);
+
+  printf("Importe total de la factura %.2f\n", importeTotal);
+  
+
+
   return 0;
+
+
+
 }
+
