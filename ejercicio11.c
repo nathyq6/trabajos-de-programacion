@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-float calcularImporteArticulo(float unidad, float cantidad) {
-  if (unidad <= 0 || cantidad <= 0) {
-    printf("el precio y la cantidad deben ser números positivos\n");
+float calcularImporteArticulo(float precioUnidad, float cantidad) {
+  if (precioUnidad <= 0 || cantidad <= 0) {
+    printf(" el precio y la cantidad deben ser números positivos\n");
     return 0;
   } else {
-   unidad*cantidad;
+    return precioUnidad * cantidad;
   }
 }
 
@@ -15,16 +15,16 @@ int main() {
   char gradoGrupo[10];
   int intentos = 0;
 
-  const char *nombreCorrecto = "nathaly"; 
+  const char *nombreCorrecto = "nathaly";
   const char *gradoGrupoCorrecto = "2b6";
 
   while (intentos < 3) {
     intentos++;
 
-    printf("Introduzca su nombre  ");
+    printf("Introduzca su nombre ");
     scanf("%s", nombre);
 
-    printf("Introduzca su grado grupo y numero de lista ");
+    printf("Introduzca su grado y grupo y numero de lista ");
     scanf("%s", gradoGrupo);
 
     if (strcmp(nombre, nombreCorrecto) == 0 && strcmp(gradoGrupo, gradoGrupoCorrecto) == 0) {
@@ -36,34 +36,33 @@ int main() {
   }
 
   if (intentos == 3) {
-    printf("Se ha superado el número máximo de intentos permitidos\n");
+    printf("Se ha superado el número máximo de intentos permitidos.\n");
   }
 
- float unidad, cantidad, importeTotal = 0;
- float calcularImporteDelArticulo;
+  float precioUnidad, cantidad, importeTotal = 0.0;
 
   while (1) {
-    printf("Introduzca el precio unitario del artículo introduzca 0 para terminar ");
-    scanf("%f", &unidad);
+    printf("Introduzca el precio unitario del artículo (0 para terminar) ");
+    scanf("%f", &precioUnidad);
 
-    if (unidad <= 0) {
+    if (precioUnidad <= 0) {
       printf("el precio unitario debe ser un número positivo\n");
       continue;
     }
 
-    printf("Introduzca la cantidad que vendiste ");
+    printf("Introduzca la cantidad vendida: ");
     scanf("%f", &cantidad);
 
     if (cantidad <= 0) {
-      printf("la cantidad vendida debe ser un número positivo\n");
+      printf("Error: la cantidad vendida debe ser un número positivo.\n");
       continue;
     }
 
-    importeTotal +=calcularImporteDelArticulo,cantidad;
+    importeTotal += calcularImporteArticulo(precioUnidad, cantidad);
 
     printf("Importe parcial: %.2f\n", importeTotal);
 
-    if (unidad == 0) {
+    if (precioUnidad == 0) {
       break;
     }
   }
