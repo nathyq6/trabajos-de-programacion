@@ -41,7 +41,7 @@ int main() {
 
   float precioUnidad, cantidad, importeTotal = 0.0;
 
-  while (1) {
+  while (precioUnidad !=0) {
     printf("Introduzca el precio unitario del artículo (0 para terminar) ");
     scanf("%f", &precioUnidad);
 
@@ -54,17 +54,14 @@ int main() {
     scanf("%f", &cantidad);
 
     if (cantidad <= 0) {
-      printf("Error: la cantidad vendida debe ser un número positivo.\n");
+      printf(" la cantidad vendida debe ser un número positivo.\n");
       continue;
     }
 
     importeTotal += calcularImporteArticulo(precioUnidad, cantidad);
 
-    printf("Importe parcial: %.2f\n", importeTotal);
+    printf("Importe parcial %.2f\n",importeTotal);
 
-    if (precioUnidad == 0) {
-      break;
-    }
   }
 
   printf("Importe total de la factura: %.2f\n", importeTotal);
